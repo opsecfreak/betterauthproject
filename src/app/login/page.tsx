@@ -1,27 +1,23 @@
-import React, { useState } from 'react';
-import { signIn } from '../../lib/auth';
+"use client";
+
+import { useFormState } from 'react-dom';
+import { signIn } from './actions';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = await signIn(email, password);
-    if (!result.success) setError(result.message);
-    // else redirect or show success
-  };
+  const initialState = { success: false, message: '' };
+  const [state, dispatch] = useFormState(signIn, initialState);
 
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
+      <form action={dispatch}>
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
         <button type="submit">Sign In</button>
       </form>
-      {error && <p style={{color:'red'}}>{error}</p>}
+      {state && !state.success && state.message && (
+        <p style={{ color: 'red' }}>{state.message}</p>
+      )}
     </div>
   );
 }
