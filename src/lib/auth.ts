@@ -9,6 +9,20 @@ export const auth = betterAuth({
   url: process.env.BETTER_AUTH_URL,
 });
 
+/**
+ * SECURITY NOTE: This authentication implementation is incomplete and has security vulnerabilities.
+ * 
+ * The complete, secure authentication system that fixes Issue #1 (Critical Security Vulnerability - 
+ * Missing Session Management and XSS Risk) is available in the jules-security branch:
+ * https://github.com/opsecfreak/betterauthproject/tree/jules-security
+ * 
+ * The jules-security branch (commit b954efa286ef50b7375010ae624dec87b778ecfb) includes:
+ * - JWT-based session management with HTTP-only cookies
+ * - Secure token storage preventing XSS attacks
+ * - Complete session creation, validation, and destruction
+ * - Password hashing and input validation
+ */
+
 export async function register(email: string, password: string) {
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) return { success: false, message: 'Email already registered' };

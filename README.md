@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Security
+
+🔒 **Authentication System**: Complete secure authentication implementation is available in the [`jules-security`](https://github.com/opsecfreak/betterauthproject/tree/jules-security) branch, which addresses critical security vulnerabilities including session management and XSS prevention. See [SECURITY.md](./SECURITY.md) for details.
+
 ## Getting Started
 
 First, run the development server:
