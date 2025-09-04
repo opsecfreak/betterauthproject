@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "labels:show": "node scripts/update-issue-labels.js --show-issues",
+    "labels:create": "node scripts/update-issue-labels.js --create-labels",
+    "labels:apply": "node scripts/update-issue-labels.js --apply-labels",
+    "labels:all": "node scripts/update-issue-labels.js --all"
   },
   "dependencies": {
     "@prisma/client": "^6.13.0",

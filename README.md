@@ -81,3 +81,83 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 *   `package.json`: Lists the project's dependencies and scripts.
 *   `next.config.ts`: The configuration file for Next.js.
 *   `tsconfig.json`: The configuration file for TypeScript.
+
+## Issue Management and Labeling
+
+This project uses a comprehensive labeling system to organize and prioritize issues effectively. 
+
+### 📋 Current Issues Status
+
+The project currently has **5 open issues** that need attention:
+
+| Issue # | Title | Priority | Type | Area | Difficulty |
+|---------|-------|----------|------|------|------------|
+| [#9](https://github.com/opsecfreak/betterauthproject/issues/9) | Implement Session Management in signIn function | 🔴 High | Security | Authentication | Medium |
+| [#10](https://github.com/opsecfreak/betterauthproject/issues/10) | Implement Session Retrieval in getSession function | 🔴 High | Security | Authentication | Medium |
+| [#11](https://github.com/opsecfreak/betterauthproject/issues/11) | Create User Registration Page | 🟡 Medium | Enhancement | Frontend | Easy |
+| [#7](https://github.com/opsecfreak/betterauthproject/issues/7) | Add E-mail Verification Flow | 🟡 Medium | Enhancement | Backend | Hard |
+| [#6](https://github.com/opsecfreak/betterauthproject/issues/6) | Enhance UI/UX for Login and Protected Pages | 🟢 Low | Enhancement | UI | Easy |
+
+### 🏷️ Label System
+
+Our labeling system categorizes issues across multiple dimensions:
+
+- **Priority**: `critical`, `high`, `medium`, `low`
+- **Type**: `bug`, `enhancement`, `security`, `documentation`, `maintenance`
+- **Area**: `authentication`, `frontend`, `backend`, `ui`, `database`, `email`
+- **Difficulty**: `good first issue`, `easy`, `medium`, `hard`
+
+### 🚀 Getting Involved
+
+**For New Contributors:**
+- Look for issues labeled `good first issue` or `easy`
+- Start with Issue #11 (User Registration Page) - it's frontend-focused and well-defined
+
+**For Experienced Developers:**
+- Issues #9 and #10 are high-priority security features
+- Issue #7 requires email integration expertise
+
+### 📊 Issue Management Tools
+
+We provide several tools to help with issue management:
+
+1. **Issue Labeling Guide**: See `ISSUE_LABELING_GUIDE.md` for detailed labeling standards
+2. **Label Management Script**: Use `scripts/update-issue-labels.js` to apply consistent labels
+3. **Enhanced Issue Files**: Each issue has a detailed markdown file with metadata
+
+#### Using the Label Management Script
+
+```bash
+# Install GitHub CLI if needed
+gh auth login
+
+# Show current issues and labels
+node scripts/update-issue-labels.js --show-issues
+
+# Create standardized labels in the repository
+node scripts/update-issue-labels.js --create-labels
+
+# Apply recommended labels to all issues
+node scripts/update-issue-labels.js --apply-labels
+
+# Do everything at once
+node scripts/update-issue-labels.js --all
+```
+
+### 📈 Project Roadmap
+
+**Phase 1: Core Security (High Priority)**
+- [x] ~~Issue #1: Security Vulnerability Assessment~~ *(Completed)*
+- [ ] Issue #9: Session Management Implementation
+- [ ] Issue #10: Session Retrieval Implementation
+
+**Phase 2: User Experience (Medium Priority)**
+- [ ] Issue #11: User Registration Page
+- [ ] Issue #7: Email Verification Flow
+
+**Phase 3: Polish (Low Priority)**
+- [ ] Issue #6: UI/UX Enhancements
+
+## Contributing
+
+Please read our [Issue Labeling Guide](ISSUE_LABELING_GUIDE.md) before contributing to ensure consistent issue management. When creating new issues, please use the appropriate labels and follow our established categories.
